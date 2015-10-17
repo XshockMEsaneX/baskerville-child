@@ -49,36 +49,6 @@
 				
 			</div>
 			
-		<?php else : ?>
-		
-			<div class="column column-2 one-third">
-			
-				<div class="widgets">
-				
-					<div class="widget widget_recent_entries">
-					
-						<div class="widget-content">
-						
-							<h3 class="widget-title"><?php _e( 'Latest posts', 'baskerville' ); ?></h3>
-							
-							<ul>
-				                <?php
-									$args = array( 'numberposts' => '5', 'post_status' => 'publish' );
-									$recent_posts = wp_get_recent_posts( $args );
-									foreach( $recent_posts as $recent ){
-										echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-									}
-								?>
-							</ul>
-			                
-						</div>
-						
-	                </div>
-									
-				</div> <!-- /widgets -->
-				
-			</div>
-			
 		<?php endif; ?> <!-- /footer-b -->
 							
 		<?php if ( is_active_sidebar( 'footer-c' ) ) : ?>
